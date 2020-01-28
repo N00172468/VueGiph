@@ -1,7 +1,15 @@
 <template>
-    <div>
-        Tis a GiphyViewer Component
-    </div>
+    <b-card-group columns>
+        <b-card
+            v-for="gif in gifs"
+            :key="gif.id"
+            :img-src="gif.images.fixed_width.url"
+            :img-alt="gif.title">
+            <b-card-text>
+                <a href="gif.url" target="_blank">{{ gif.title }}</a>
+            </b-card-text>
+        </b-card>
+    </b-card-group>
 </template>
 
 <script>
